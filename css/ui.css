@@ -1,0 +1,203 @@
+body {
+  font-family: "Josefin Slab";
+  background-color: var(--dark-green);
+  overflow-x: hidden;
+  margin: 0px;
+  padding: 0px;
+}
+
+main {
+  position: relative;
+  top: 120px;
+  z-index: 0;
+}
+.l-header {
+  display: flex;
+  flex-direction: column;
+
+  position: fixed;
+  z-index: 900;
+  top: 0;
+  height: 120px;
+  width: 100vw;
+}
+
+.top-header {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  justify-items: center;
+  background-color: var(--dark);
+  z-index: 500;
+  height: inherit;
+  width: inherit;
+  box-shadow: 0px 5px 6px 0px rgba(14, 14, 14, 0.7);
+}
+
+.gr-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+}
+.gr-logo p {
+  color: var(--emerald-white);
+  font-size: 1.2rem;
+}
+
+.hdr-logo {
+  height: 50%;
+  width: 80%;
+  margin-top: 3px;
+  object-fit: fill;
+  /* object-position: 0% 55%; */
+  /* background-color: rgba(74, 69, 63, 0.606); */
+}
+
+.buttom-nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  position: relative;
+  z-index: 200;
+  background-color: var(--emerald-white);
+  height: 100px;
+  box-shadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.4);
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+
+  border-right: 1px solid var(--dark);
+}
+.nav-btn p {
+  color: var(--dark);
+  font-size: 1rem;
+}
+.selected-nav {
+  background-color: var(--emerald);
+  text-decoration: underline;
+  color: var(--dark);
+}
+
+.l-container {
+  display: flex;
+  position: relative;
+  /* top: 120px; */
+  z-index: -1;
+  width: 100vw;
+  height: 250px;
+  background-color: rgb(236, 212, 183);
+}
+
+.slider {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  /* overflow-y: hidden; */
+}
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 100%;
+  min-width: 100%;
+
+  transition: all 0.5s;
+  background-color: rgb(141, 121, 196);
+  border: 1px solid var(--dark);
+}
+.slider-btn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  border-radius: 50%;
+  z-index: 550;
+  cursor: pointer;
+  background-color: #fff;
+  font-size: 18px;
+}
+.slider-btn:active {
+  transform: scale(1.1);
+}
+
+.nxt-slide {
+  top: 80%;
+  left: 85%;
+}
+.prev-slide {
+  top: 80%;
+  left: 2%;
+}
+
+.carousel {
+  width: 100vw;
+  height: 60vh;
+  position: relative;
+}
+.carousel > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.slide {
+  display: flex;
+  justify-items: center;
+
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.slide > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.slide[data-active] {
+  opacity: 1;
+}
+
+.carousel-button {
+  position: absolute;
+  z-index: 100;
+  background: none;
+  border: none;
+  font-size: 4rem;
+  top: 50%;
+  color: rgba(255, 255, 255, 0.477);
+  cursor: pointer;
+  border-radius: 0.25rem;
+  padding: 0 0.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.carousel-button:hover,
+.carousel-button:focus {
+  color: var(--emerald-white);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.carousel-button:focus {
+  outline: 1px solid var(--dark);
+}
+
+.carousel-button.prev {
+  left: 1rem;
+}
+.carousel-button.next {
+  right: 1rem;
+}

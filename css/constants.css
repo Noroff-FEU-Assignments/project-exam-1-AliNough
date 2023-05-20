@@ -1,0 +1,11 @@
+:root {
+  --emerald-white: rgba(222, 240, 231);
+  --emerald-white-trans: rgba(222, 240, 231, 0.6);
+  --emerald-light: rgba(149, 240, 199);
+  --emerald-light-trans: rgba(149, 240, 199, 0.6);
+  --emerald: rgba(89, 210, 149);
+  --dark: rgba(16, 18, 17);
+  --dark-green: rgba(30, 34, 32);
+  --orange: rgba(240, 168, 104);
+  --lazy-green: rgba(105, 114, 104);
+}
