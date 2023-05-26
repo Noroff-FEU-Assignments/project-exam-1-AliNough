@@ -1,67 +1,100 @@
-## Project Exam 1
+## Semester project - FED 22-23
 
-## Goal
+#### by Ali Najimedini
 
-To put into practice the skills learned over your first year of studies.
+### Design:
 
-## Brief
-You have been tasked with creating a blog site. You can choose the design and topics covered on the blog, but it should have at least the following pages:
--	Home page
--	About page
--	List of blog posts
--	Blog post specific pages
--	Contact page.
+https://www.figma.com/file/yuBJHES6b364on8xKXnI8o/MindInk-blog?type=design&node-id=16%3A98&t=pG3H4kZlI2iU0YAl-1
 
-### Home Page
-The home page should have a ‘Latest Posts’ section which uses a carousel (slider) for users to click to view more posts. For example, by default the user can see four posts, then they can click an arrow on the right to view the next four posts, and click it again to view the next four posts. The user can also click back to view results they had previously seen. This must be implemented for desktop at least, but if you want a simpler layout for mobile, you can change it from being in a carousel.
+### Live link:
 
-### Blog Page
+https://capable-halva-bd2d30.netlify.app/
 
-The blog posts page should show the first 10 blogs, and the user should click to view more results which then show underneath the first 10 blogs.
+### Repo link:
 
-### Blog Specific Page
+https://github.com/Noroff-FEU-Assignments/project-exam-1-AliNough.git
 
-The content of the blog specific page should be dynamically built using a query string parameter based on whatever link the user clicked. The title of the blog specific page should change based on the blog that has been clicked on e.g. “My Blog | An Article I Wrote”.
+### Instruction:
 
-If images on the blog post page are clicked, a modal should appear giving the user a bigger view of that image. Clicking outside the image should hide the modal.
+This is my exam project report, where I will be explaining my code and decisions in best way i can.
+I will be going through my challenges and my solutions to those challanges.
+The task is design and development of a blog site.
 
-### Contact page
+I used Airtable for my backend, I was told by my teacher that it was an allowed alternative to WordPress. I found it to be easier to work with. With Airtable you can name the tables which makes it easier to target and you get 3 options for the thumbnail. I do hope thats ok.
 
-Create a contact us page, there should be 4 textboxes on this page.
--	Name (Should be more than 5 characters long)
--	Email address (Must be a valid email address)
--	Subject (Should be more than 15 characters long)
--	Message content (Should be more than 25 characters long)
+### Main :
 
-Please use JavaScript for validation, show error messages if the values in the textboxes do not meet the requirements.
+A website using Airtable to populate its content. I started of with the design in Figma. I chose the colors i want to work with and then proceeded to making home page. Although it's a very small Figma project, I got a decent idea to start with.
 
-### WordPress
+Starting with the carousel, since i sensed it was going to be the main challange. In the process I learned a little about "data-" attribute in HTML. It was a unusual way of targeting manipulating the elements with JS. I would say this was the most time consuming challange I struggled with.
 
-The content for your website will be stored on a WordPress installation used as a Headless CMS. It’s important to note that we are only using WordPress to provide an API and add content for the blog. You should not submit a link to a WordPress site, but build your website using HTML, CSS and JavaScript and making a call to the WordPress REST API to fetch the data. 
+After the carousel, I starte to populate my website with data from Airtable API. This was also a time consuming part. Just understanding the url structure for API call was a hassle, eventually I got a good response using Postman and make a variable for all parts of the url.
 
-The project has two aspects:
--	API from your WordPress installation
--	Your website built with HTML, CSS and JavaScript
+Now that we got the url working, I needed to include my token with the call. The problem was that I needed to hide the token, this sent me down a long and confusing road and unfortunately I was not able to hide my token.
 
-You will need to add at least 12 blogs for your website. You can use lorem ipsum for paragraphs if you need, but headings, images etc. should all make sense.
+### Known issues/challenges:
 
-Note that this is an exam, and therefore tutor support will be limited as per the study plan.
+##### Home page:
 
-## Level 1 Process
+- The carousel in Home page is not working correctly. The slides which are not visible are hidden in the background and their thumbnail images are extended further under the carousel section and are clickable. If you click below the carousel on the dark background area, the blog which is hidden behind will bring you to its detail page.
+- Carousel slider buttons are not locked inside the actual carousel. The the loose in the page. If you test out the responsivity of the page, you'll catch my meaning.
 
-1.	Decide on the theme for the blog you’re going to make
-2.	Create a prototype of the website
-3.	Install WordPress on your web host and add the blogs on the admin panel. 
-4.	Use the GitHub repo created by GitHub Classroom for your files and deploy to Netlify
-5.	Build your website using HTML, CSS and JavaScript making a call to the WordPress REST API to fetch your data.
-6.	Install Hotjar on your website.
-7.	Ask users to test your website, and adjust based on their feedback and any insights from Hotjar.
-8.	Write a report documenting your project (template provided in this repository).
-9.	Submit your report as a PDF and a link to both your Netlify deployment and your GitHub repo.
- 
-## Level 2 Process (optional)
+##### Details page:
 
-1.	You can try adding a sort, filter, or search to the blog posts page allowing users to find the blog post more easily that they’re looking for. 
-2.	Post the data from the contact form to WordPress so you have the details saved.
-3.	Allow users to submit comments on a blog post, and post this data to WordPress
+- No major issue here.
 
+##### Blogs Page:
+
+- The responsivity in this page could be better. I struggled with flex-box. I wanted the contents to go from row to column when the screen shrinks below a certain width. But I could not get it to work so I used media queries instead. Now the contents copy or "preview" is too small. I need to find a solution for that.
+
+##### Contact Page:
+
+- Main challange was to give users a error message with explanation. I have grouped the first name and last name input and it made it difficult to target the error message element <p> that is sibling to inputs. I worked around it by targeting all the elements individually.
+
+##### Other:
+
+- "back button" does not take you back, but to index.html.
+- I couls not hide my API token. Which is a majot issue. I tried to solve this by making a environment variable but did fail.
+
+### .css structure:
+
+> blog-page-ui: UI styling spesific to blog page.
+> constants: Declaration of global variables.
+> contact: UI styling spesific to contact page, forms, inputs.
+> detail-page-ui: UI styling spesific to detail page.
+> main: Assembly of all .css files.
+> ui: Main styling. Mostly styling index page but also contains unchanged styles for less repetition.
+
+### Sources and resources:
+
+##### font:
+
+https://fonts.google.com/specimen/Josefin+Slab
+
+##### Images:
+
+https://unsplash.com/photos/Rfflri94rs8
+https://unsplash.com/photos/HWQXIYbs8PM
+https://unsplash.com/photos/rjEoFD8l1vo
+https://unsplash.com/photos/3WOh54znPGU
+https://unsplash.com/photos/ViJmrvjFi9Q
+https://unsplash.com/photos/cYQ77_IQFaQ
+https://unsplash.com/photos/uZt8wD1rgeo
+https://unsplash.com/photos/Rfflri94rs8
+https://unsplash.com/photos/SYTO3xs06fU
+
+##### Stack overflow:
+
+https://stackoverflow.com/questions/3680876/using-queryselectorall-to-retrieve-direct-children
+https://stackoverflow.com/questions/3922739/limit-text-length-to-n-lines-using-css
+
+##### w3school:
+
+https://www.w3schools.com/css/css3_object-fit.asp
+https://www.w3schools.com/tags/att_data-.asp
+https://www.w3schools.com/html/html_form_input_types.asp
+https://www.w3schools.com/jsref/met_element_closest.asp
+
+##### loader tool:
+
+https://www.cssportal.com/css-loader-generator/
