@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="/js/contact.js"></script>
+    <title>Contact - MindInk</title>
+  </head>
+  <body>
+    <header class="l-header">
+      <div class="top-header">
+        <a href="/index.html" class="go-back-btn"><</a>
+        <div class="gr-logo">
+          <img
+            class="hdr-logo"
+            src="/assets/icons/MindInk-White-logo-800x600-cropped.png"
+            alt=""
+          />
+          <p>Express Yourself</p>
+        </div>
+        <div></div>
+      </div>
+      <div class="buttom-nav">
+        <a href="/index.html" class="nav-btn"><p>Home</p></a>
+        <a href="/html/blogs.html" class="nav-btn"><p>Blogs</p></a>
+        <a href="/html/contact.html" class="nav-btn selected-nav"
+          ><p>Contact</p></a
+        >
+        <a href="" class="nav-btn"><p>About</p></a>
+      </div>
+    </header>
+    <section class="cp-container">
+      <h2>Send a message</h2>
+    </section>
+    <section
+      id="js-form-container"
+      aria-label="form container"
+      class="form-container"
+    >
+      <form id="js-form" action="">
+        <div id="js-name-gr" class="name-gr">
+          <input
+            type="text"
+            name="fname"
+            id="js-fname-input"
+            class="form-input"
+            placeholder="First name"
+          />
+          <input
+            type="text"
+            name="lname"
+            id="js-lname-input"
+            class="form-input"
+            placeholder="Last Name"
+          />
+        </div>
+        <p data-id="form-err-msg" id="js-form-name-err-msg" class="err-msg">
+          c Please enter a valid name. Minimum 2 letters
+        </p>
+        <input
+          type="email"
+          id="js-email-input"
+          class="form-input"
+          placeholder="E-mail"
+        />
+        <p data-id="form-err-msg" id="js-email-form-err-msg" class="err-msg">
+          Please enter a valid E-mail.
+        </p>
+        <textarea
+          class="text-box"
+          placeholder="Write a message..."
+          name=""
+          id="js-txt-area-input"
+          cols="30"
+          rows="10"
+        ></textarea>
+        <p data-id="form-err-msg" id="js-txt-box-err-msg" class="err-msg">
+          Please write a message
+        </p>
+        <input
+          type="submit"
+          name="submit"
+          class="form-input submit-btn"
+          id="js-submit-btn"
+          placeholder="SUbmit"
+        />
+      </form>
+    </section>
+  </body>
+</html>

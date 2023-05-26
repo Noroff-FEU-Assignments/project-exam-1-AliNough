@@ -1,11 +1,20 @@
 :root {
   --emerald-white: rgba(222, 240, 231);
-  --emerald-white-trans: rgba(222, 240, 231, 0.6);
+  --emerald-white-trans-6: rgba(222, 240, 231, 0.6);
+  --emerald-white-trans-3: rgba(222, 240, 231, 0.3);
   --emerald-light: rgba(149, 240, 199);
   --emerald-light-trans: rgba(149, 240, 199, 0.6);
   --emerald: rgba(89, 210, 149);
   --dark: rgba(16, 18, 17);
+  --dark-trans-3: rgba(16, 18, 17, 0.3);
   --dark-green: rgba(30, 34, 32);
-  --orange: rgba(240, 168, 104);
+  --orange: rgba(255, 183, 119);
+  --red-white: rgb(248, 224, 224);
+  --red-light: rgb(228, 132, 132);
+  --red-mid: rgb(202, 65, 65);
+  --red-hvy: rgb(137, 19, 19);
   --lazy-green: rgba(105, 114, 104);
+  --green-white: rgb(212, 247, 212);
+  --green-light: rgb(177, 227, 120);
+  --green-mid: rgb(86, 210, 86);
 }
