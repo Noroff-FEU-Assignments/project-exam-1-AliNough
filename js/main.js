@@ -2,6 +2,8 @@ const sliderListEl = document.querySelector("#js-slider-list");
 const sliderButtons = document.querySelectorAll("[data-carousel-button]");
 
 getPosts();
+const postListEl = document.querySelector("#js-post-list");
+let activeSlideId;
 
 async function getPosts() {
   try {
@@ -16,11 +18,10 @@ async function getPosts() {
         },
       }
     );
-
     const result = await response.json();
-
     // Clear existing HTML content
     sliderListEl.innerHTML = "";
+    postListEl.innerHTML = "";
 
     result.records.forEach((post, index) => {
       // Set data-active attribute for the first post only
@@ -40,9 +41,41 @@ async function getPosts() {
         </li>
       `;
       sliderListEl.innerHTML += html;
-    });
 
-    console.log(sliderListEl.firstChild);
+      if (isActive) {
+        activeSlideId = post.id;
+      }
+
+      postListEl.innerHTML += `
+      <li id="js-post-item" class="l-items">
+            <a href="html/detail.html?id=${post.id}">
+              <img
+                id="js-post-thum-img"
+                src="${post.fields.Assets[0].thumbnails.large.url}"
+                alt=""
+              />
+              <div class="post-dscptn">
+                <h3>${post.fields.title}</h3>
+                <hr />
+                <p>
+                ${post.fields.Notes}
+                </p>
+              </div>
+            </a>
+          </li>
+      `;
+      const postItemEl = document.querySelectorAll("#js-post-item");
+      postItemEl.forEach((postItem) => {
+        const postThum = postItem.querySelector("#js-post-thum-img");
+        postItem.addEventListener("mouseenter", (e) => {
+          postThum.classList.add("img-hidden");
+        });
+
+        postItem.addEventListener("mouseleave", (e) => {
+          postThum.classList.remove("img-hidden");
+        });
+      });
+    });
   } catch (err) {
     console.error(err);
   }
@@ -56,7 +89,7 @@ sliderButtons.forEach((button) => {
       .querySelector("[data-slides]");
 
     const activeSlide = slides.querySelector("[data-active]");
-    console.log(activeSlide);
+
     let newIndex = [...slides.children].indexOf(activeSlide) + offset;
     if (newIndex < 0) {
       newIndex = slides.children.length - 1;
