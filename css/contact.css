@@ -38,9 +38,10 @@ form {
 .form-input {
   background-color: rgb(237, 251, 251);
   padding: 10px 12px;
+  font-size: 1.1rem;
   width: 100%;
   border: 0;
-  border-radius: 3px;
+  border-radius: 6px;
 }
 
 .form-input:focus,
@@ -58,11 +59,17 @@ form {
 .text-box {
   width: 100%;
   padding: 10px;
-  border-radius: 3px;
+  border-radius: 6px;
+  font-size: 1.1rem;
 }
 
 .submit-btn {
+  opacity: 0.3;
   background-color: var(--orange);
+}
+.btn-on-scs {
+  opacity: 1;
+  cursor: pointer;
 }
 
 .err-msg {
@@ -80,13 +87,13 @@ form {
 
 .inp-pass {
   background-color: var(--green-white);
-  border: 2px inset var(--green-mid);
+  border: 1px inset var(--green-mid);
   box-shadow: 0px 0px 6px 0px var(--green-mid);
 }
 
 .inp-err {
   background-color: var(--red-white);
-  border: 2px inset var(--red-hvy);
+  border: 1px inset var(--red-hvy);
   box-shadow: 0px 0px 6px 0px var(--red-hvy);
 }
 

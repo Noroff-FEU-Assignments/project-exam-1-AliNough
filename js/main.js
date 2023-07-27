@@ -32,8 +32,8 @@ async function getPosts() {
           <a href="html/detail.html?id=${post.id}">
             <img src="${post.fields.Assets[0].thumbnails.large.url}" alt="nature photo 1"/>
             <div class="slide-paragraph">
-              <h4>${post.fields.author.name}</h4>
               <h2>${post.fields.title}</h2>
+              <h4>${post.fields.author.name}</h4>
               <hr/>
               <p>${post.fields.Notes}</p>
             </div>

@@ -196,7 +196,7 @@ h2 {
   /* min-height: 165px; */
 
   overflow: hidden;
-  padding: 15px 10px;
+  padding: 21px 10px;
   color: var(--dark);
   box-shadow: 0px 0px 12px 0px white;
 }
@@ -347,6 +347,16 @@ h2 {
 }
 
 /* --------------------------------------------------------------- */
+/* ----------------- FOOTER ---- START---------------------------- */
+/* --------------------------------------------------------------- */
+
+footer {
+  width: 100vw;
+  height: 90px;
+  background-color: var(--dark);
+}
+
+/* --------------------------------------------------------------- */
 /* ----------------- UNCHANGED STYLING & MISC -------------------- */
 /* --------------------------------------------------------------- */
 
@@ -397,5 +407,15 @@ h2 {
 
   .hdr-logo {
     max-width: 220px;
+  }
+  .slide-paragraph {
+    padding: 21px 6rem;
+  }
+  .slide-paragraph > h2 {
+    padding-left: 2rem;
+  }
+  .slide-paragraph > h4 {
+    margin-top: 3px;
+    padding-left: 2rem;
   }
 }

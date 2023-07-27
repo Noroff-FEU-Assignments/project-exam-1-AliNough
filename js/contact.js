@@ -4,6 +4,7 @@ const lnameEl = document.querySelector("#js-lname-input");
 const nameGrEl = document.querySelector("#js-name-gr");
 const emailEl = document.querySelector("#js-email-input");
 const txtBoxEl = document.querySelector("#js-txt-area-input");
+const submitBtnEle = document.querySelector("#js-submit-btn");
 
 const nameErrEl = document.querySelector("#js-form-name-err-msg");
 const emailErrEl = document.querySelector("#js-email-form-err-msg");
@@ -17,18 +18,8 @@ formEl.addEventListener("submit", (e) => {
   const email = emailEl.value;
   const txtBox = txtBoxEl.value;
 
-  if (lname === "" || fname === "") {
-    alert("Please enter your name");
-    return;
-  }
-
-  if (email === "") {
-    alert("Please enter an email");
-    return;
-  }
-
-  if (txtBox.length < 9) {
-    alert("Please write a message. Minimum 9 characters");
+  if (lname === "" || fname === "" || email === "" || txtBox.length < 9) {
+    alert("Please fill in all the required fields correctly");
     return;
   }
 
@@ -41,14 +32,15 @@ fnameEl.addEventListener("blur", (e) => {
   const errMsg = "Invalid name: minimum 2 letters";
 
   validator(e.target, fname, regX, errMsg, nameErrEl);
+  updateSubmitButton();
 });
 
 lnameEl.addEventListener("blur", (e) => {
   const lname = lnameEl.value.trim().toLowerCase();
   const regX = /^[a-zA-Z]{2,}/;
   const errMsg = "Invalid name: minimum 2 letters";
-
   validator(e.target, lname, regX, errMsg, nameErrEl);
+  updateSubmitButton();
 });
 
 emailEl.addEventListener("blur", (e) => {
@@ -59,13 +51,15 @@ emailEl.addEventListener("blur", (e) => {
     /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
   const errMsg = "Invalid email. example: name@example.com";
   validator(e.target, email, regX, errMsg, emailErrEl);
+  updateSubmitButton();
 });
 
 txtBoxEl.addEventListener("blur", (e) => {
   const txtBox = txtBoxEl.value.trim();
-  const regX = /^[a-zA-Z]{9,}/;
+  const regX = /^.{9,}/;
   const errMsg = "Invalid message: minimum 9 characters";
   validator(e.target, txtBox, regX, errMsg, txtBoxErrEl);
+  updateSubmitButton();
 });
 
 function validator(field, inp, regX, msg, errField) {
@@ -85,4 +79,18 @@ function displayMsg(field, msg) {
   field.innerHTML = "";
   field.innerHTML = msg;
   field.classList.add("show-err-msg");
+}
+
+function updateSubmitButton() {
+  const isValid =
+    fnameEl.classList.contains("inp-pass") &&
+    lnameEl.classList.contains("inp-pass") &&
+    emailEl.classList.contains("inp-pass") &&
+    txtBoxEl.classList.contains("inp-pass");
+
+  if (isValid) {
+    submitBtnEle.classList.add("btn-on-scs");
+  } else {
+    submitBtnEle.classList.remove("btn-on-scs");
+  }
 }
